@@ -46,25 +46,116 @@
         let remBtn = document.querySelector("#rem-btn");
         let mulBtn = document.querySelector("#mul-btn");
         let divBtn = document.querySelector("#div-btn");
-        let resBtn = document.querySelector("#reset-btn");
+        let resetBtn = document.querySelector("#reset-btn");
 
-
+        let error1 = document.querySelector("#input1Error");
+        let error2 = document.querySelector("#input2Error");
 
         addBtn.addEventListener("click", function () {
-            alert(Number(input1.value) + Number(input2.value));
+            if (input1.value == "") {
+                input1.style.border = "1px solid red";
+                error1.style.display = "block";
+            }
+            else {
+                input1.style.border = "";
+                error1.style.display = "none";
+            }
+
+            if (input2.value == "") {
+                input2.style.border = "1px solid red";
+                error2.style.display = "block";
+            }
+            else {
+                input2.style.border = "";
+                error2.style.display = "none";
+            }
+
+            if (input1.value != "" && input2.value != "") {
+                alert(Number(input1.value) + Number(input2.value));
+            }
         });
 
         remBtn.addEventListener("click", function () {
-            alert(input1.value - input2.value);
+            if (input1.value == "") {
+                input1.style.border = "1px solid red";
+                error1.style.display = "block";
+            }
+            else {
+                input1.style.border = "";
+                error1.style.display = "none";
+            }
+
+            if (input2.value == "") {
+                input2.style.border = "1px solid red";
+                error2.style.display = "block";
+            }
+            else {
+                input2.style.border = "";
+                error2.style.display = "none";
+            }
+
+            if (input1.value != "" && input2.value != "") {
+                alert(Number(input1.value) - Number(input2.value));
+            }
         });
 
         mulBtn.addEventListener("click", function () {
-            alert(input1.value * input2.value);
+            if (input1.value == "") {
+                input1.style.border = "1px solid red";
+                error1.style.display = "block";
+            }
+            else {
+                input1.style.border = "";
+                error1.style.display = "none";
+            }
+
+            if (input2.value == "") {
+                input2.style.border = "1px solid red";
+                error2.style.display = "block";
+            }
+            else {
+                input2.style.border = "";
+                error2.style.display = "none";
+            }
+
+            if (input1.value != "" && input2.value != "") {
+                alert(Number(input1.value) * Number(input2.value));
+            }
         });
 
         divBtn.addEventListener("click", function () {
-            alert(input1.value / input2.value);
+            if (input1.value == "") {
+                input1.style.border = "1px solid red";
+                error1.style.display = "block";
+            }
+            else {
+                input1.style.border = "";
+                error1.style.display = "none";
+            }
+
+            if (input2.value == "") {
+                input2.style.border = "1px solid red";
+                error2.style.display = "block";
+            }
+            else {
+                input2.style.border = "";
+                error2.style.display = "none";
+            }
+
+            if (input1.value != "" && input2.value != "") {
+                if(Number(input2.value == 0)) {
+                    alert("Нельзя делить на 0!")
+                }
+                else {
+                    alert(Number(input1.value) / Number(input2.value));
+                }
+            }
         });
+
+        resetBtn.addEventListener("click", function () {
+            input1.value = 0;
+            input2.value = 0;
+        })
     </script>
 </body>
 
